@@ -6,6 +6,7 @@ Learning the basics of Rust using 2048.
 TODO
 ====
 - [ ] Build tests
-- [ ] Use concurrency in the game
+- [ ] Use concurrency when merging arrays
+- [ ] Follow documentation standards
 
 
