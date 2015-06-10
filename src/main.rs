@@ -1,33 +1,16 @@
 use std::io;
-// TODO: Implement them modularly
-//mod app;
-//mod board;
-//mod tiles;
+mod app;
+mod player;
+mod console;
+mod board;
+mod tiles;
 
 fn main() {
 
-    // TODO: Place in IO functions
-    for  i in 0..42 {
-        print!("=");
-    }
-    print!(" 2048 Game ");
-    for i in 0..42 {
-        print!("=");
-    }
+    console::show_menu();
 
-    println!("\n");
-    // end fn
-
-    // TODO: Place in IO function
-    println!("Please key in your name: ");
-    let mut name = String::new();
-
-    io::stdin().read_line(&mut name)
-        .ok()
-        .expect("Failed to read name");
-
-    println!("\nWelcome, {}", name);
-    // end fn
+    let name = console::request_name();
+    let player1 = player::Player::new(&name);
 
     // TODO: Place in IO function
     println!("Instruction: ");
