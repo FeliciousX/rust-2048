@@ -2,6 +2,7 @@ use std::io;
 mod app;
 mod player;
 mod console;
+mod settings;
 mod board;
 mod tiles;
 
@@ -12,19 +13,7 @@ fn main() {
     let name = console::request_name();
     let player1 = player::Player::new(&name);
 
-    // TODO: Place in IO function
-    println!("Instruction: ");
-    println!("8 to move up");
-    println!("2 to move down");
-    println!("4 to move left");
-    println!("6 to move right");
+    let settings = settings::Settings::new(4, 4);
 
-    let mut instruction = String::new();
-
-    io::stdin().read_line(&mut instruction)
-        .ok()
-        .expect("Failed to read instruction");
-
-    println!("\nSelected {}", instruction);
-    // end fn
+    app::load();
 }

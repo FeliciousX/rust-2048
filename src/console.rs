@@ -24,3 +24,25 @@ pub fn request_name() -> String {
 
     name.to_string()
 }
+
+pub fn get_instruction() -> String {
+    use std::io;
+
+    show_instruction();
+
+    let mut instruction = String::new();
+
+    io::stdin().read_line(&mut instruction)
+        .ok()
+        .expect("Failed to read instruction");
+
+    instruction.to_string()
+}
+
+fn show_instruction() {
+    println!("Instruction: ");
+    println!("8 to move up");
+    println!("2 to move down");
+    println!("4 to move left");
+    println!("6 to move right");
+}
