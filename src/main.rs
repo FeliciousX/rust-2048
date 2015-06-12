@@ -15,5 +15,5 @@ fn main() {
 
     let settings = settings::Settings::new(4, 4);
 
-    app::load();
+    app::load(&settings);
 }
